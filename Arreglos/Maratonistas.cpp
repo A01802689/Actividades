@@ -7,11 +7,6 @@ Maratonistas::Maratonistas()
     tam = 0;
 }
 
-Maratonistas::~Maratonistas()
-{
-    // Destructor
-}
-
 void Maratonistas::setTam()
 {
     cout << "¿Cuántos corredores son? ";

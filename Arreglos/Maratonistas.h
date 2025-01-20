@@ -15,7 +15,7 @@ class Maratonistas
         int getTam();
         void setDatosMaraton();
         float calculaPromedioKmM();
-        virtual ~Maratonistas();
+      
 };
 
 #endif

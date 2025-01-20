@@ -4,17 +4,6 @@
 
 using namespace std;
 
-
-  /*  Corredor c[2];//Arreglo de objetos
-
-    for(int i=0;i<2;i++){
-        c[i].setNombre();
-        c[i].setKms();
-        c[i].calculaPromedioC();
-        c[i].imprime();
-    }
-*/
-
 int main(){
     Maratonistas Mar;
     
@@ -24,3 +13,4 @@ int main(){
 
     return 0;
 }
+
