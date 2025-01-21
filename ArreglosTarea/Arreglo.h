@@ -3,7 +3,7 @@
 
 class avion {
 private:
-    int PesoAviones[50]; // Arreglo para almacenar 50 valores
+    int PesoAviones[50]; 
 public:
     
     avion();
@@ -12,7 +12,7 @@ public:
     void llenarArreglo(int min, int max);
     void mostrarPesos() const;
 
-    // Calcular varianza y desviación estándar
+
     void calcularDispersiones(double &varianza, double &desviacionEstandar) const;
     void consultarAvion() const;
     void cambiarPeso();
