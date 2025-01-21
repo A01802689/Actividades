@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Persona.h"
+#include "Kinder.h"
 
 using std::cin;
 using std::cout;
@@ -7,14 +8,11 @@ using std::endl;
 
 int main(){
 
-Persona objeto1;
+    Kinder objeto1;
 
-objeto1.setSexo();
-objeto1.setEstaturaPapa();
-objeto1.setEstaturaMama();
+    objeto1.setDatosVector();
+    objeto1.imprimeVector();
 
-
-objeto1.imprimeEstatura();
  
  return 0;
 }
