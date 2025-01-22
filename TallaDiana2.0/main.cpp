@@ -12,6 +12,7 @@ int main(){
 
     objeto1.setDatosVector();
     objeto1.imprimeVector();
+    objeto1.EstaturasTotales();
 
  
  return 0;

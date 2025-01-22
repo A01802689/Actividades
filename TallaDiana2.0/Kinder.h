@@ -17,6 +17,8 @@ class Kinder
         void setDatosVector();
         void imprimeVector();
         virtual ~Kinder();
+        float sumaEstaturas();
+        void EstaturasTotales();
 };
 
 #endif 

@@ -41,6 +41,17 @@ void Kinder::imprimeVector(){
 
 */   }
 
+float Kinder::sumaEstaturas() {
+    float suma = 0;
+    for (int i = 0; i < k.size(); ++i) { 
+        suma += k[i].calculaEstatura();
+    }
+    return suma;
+}
+
+void Kinder::EstaturasTotales(){
+    cout<<"La suma de todos los jovenes es de: "<<sumaEstaturas()<<endl;
+}
 
 
 Kinder::~Kinder()

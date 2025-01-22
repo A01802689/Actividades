@@ -1,21 +1,18 @@
-#ifndef OPERACIONES_H
-#define OPERACIONES_H
-#include "Suma.h"
-#include "Multiplicacion"
+#ifndef OPERA_H
+#define OPERA_H
 
-
-class operaciones{
+class operacion{
 
 private:
 
 float numeros[5];
 
-Sum objeto1;
-
 public:
 
-float Numeros();
-void Resultados();
+operacion();
+
+void Numeros();
+float suma();
 
 };
 #endif

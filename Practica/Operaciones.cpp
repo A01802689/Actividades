@@ -1,30 +1,29 @@
 #include "Operaciones.h"
 #include <iostream>
+using namespace std;
 
-using std::cin;
-using std::cout;
-using std::endl;
 
-operaciones::opreaciones(){
-    for(int i=0; i<cantidad;i++){
+
+operacion::operacion(){
+
+    for(int i=0; i<5; i++){
         numeros[i]=0.0;
     }
 }
 
-
-float operaciones::Numeros(){
-    cout<<"Dame 5 numeros para sumar"<<endl;
+void operacion::Numeros(){
+    cout<<"Dame 5 numeros que quieras sumar"<<endl;
     for(int i=0; i<5; i++){
+        cout<<"Num("<<i+1<<"): ";
         cin>>numeros[i];
-
     }
 }
 
-const float* getNumeros() const {
-        return numeros;
+float operacion::suma(){
+    float sum=0.0;
+
+    for(int i=0; i<5;i++){
+        sum=sum+numeros[i];
     }
-
-
-void operaciones::Resultados(){
-    cout<<"El resultado de la suma es: "<<objeto1.sumar();
+   return sum;
 }

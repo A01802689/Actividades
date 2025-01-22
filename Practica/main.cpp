@@ -1,17 +1,11 @@
-#include "Operaciones.h"
-#include "Suma.h"
+#include "Alumnos.h"
+using namespace std;
 
-using std::cin;
-using std::cout;
-using std::endl;
 
 int main(){
 
-    operaciones objetoF;
-
-    objetoF.Numeros();
-    objetoF.Resultados();
-
+alumnos objeto;
+objeto.Resultados();
 
 return 0;
 }
