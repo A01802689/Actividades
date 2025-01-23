@@ -31,9 +31,9 @@ void alumnos::Resultados(){
     char opcion =' ';
 
     do{
-    alumnos objeto2;
-    objeto2.setNom();
-    objeto2.setEdad();
+   
+    setNom();
+    setEdad();
     objeto1.Numeros();
     cout<<"los resultados de tu suma de 5 numeros es: "<<objeto1.suma()<<endl;
     cout<<"Quieres hcaerlo otra vez: (s/n)";
