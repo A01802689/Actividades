@@ -2,10 +2,8 @@
 #define CAPACIDAD_H
 using namespace std;
 
-class capacidad{
-
-    private:
-
+class capacidad {
+private:
     int anio;
     float kilometraje;
     int puertas;
@@ -13,17 +11,24 @@ class capacidad{
     float rendimiento;
     float capacidadT;
     float gasolinaT;
+    float distancia;
+    int asientos;
 
-    public:
-
+public:
     capacidad();
 
     void setAnio();
     int getAnio();
 
-    void NumPasajeros();
-    int NumPasajeros();
-    
+    void setNumPasajeros();
+    int getNumPasajeros();
+
+    void setDistanciaRecorrer();
+    float getDistanciaRecorrer();
+
+    void setAsientos();
+    int getAsientos();
+
     void setKilometraje();
     float getKilometraje();
 
@@ -40,10 +45,9 @@ class capacidad{
     float getGasolinaEnTanque();
 
     float AvanzaAutomovil();
-    float CalculaConsumo();
-    float llenaTanque();
-    float requiereMantenimiento();
+    float calculaConsumo();
+    void llenaTanque();
+    bool requiereMantenimiento();
     void validaGasolinaEnTanque();
-
 };
 #endif

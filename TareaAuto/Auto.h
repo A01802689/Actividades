@@ -1,23 +1,18 @@
 #ifndef AUTO_H
 #define AUTO_H
 #include <string>
-#include<vector>
+#include <vector>
 #include "Capacidad.h"
 using namespace std;
 
-
-class Carro{
-
+class Carro {
 private:
-   
-   vector<capacidad> Datos;
-
+    vector<capacidad> Datos;
     string marca;
     string modelo;
     string color;
 
 public:
-
     Carro();
     void setMarca();
     string getMarca();
@@ -29,6 +24,5 @@ public:
     string getColor();
 
     void ImprimeAutovil();
-
 };
 #endif
