@@ -3,18 +3,17 @@
 #include <string>
 using namespace std;
 
-class Usuario{
-
-    private:
-
+class Usuario {
+private:
     string nombre;
     string correo;
     char registro;
     int edad;
+    char Opcion;
 
-    public:
-
+public:
     Usuario();
+
     void setNombre();
     string getNombre();
 
@@ -23,9 +22,10 @@ class Usuario{
 
     void setCorreo();
     string getCorreo();
-    
+
+    char getOpcion();
+
     void Registro();
-
-
 };
+
 #endif
