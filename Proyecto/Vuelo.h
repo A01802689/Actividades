@@ -12,21 +12,25 @@ class vuelo{
 
     int NumVuelo;
     string nombreAvion;
+    int pasajeros;
     float precio;
     string destino;
     float duración;
+    float Kilometros;
 
     public:
 
-    vuelo();
-    gestionarVuelos();
-    void setDatos(int num, string nombre, float cost, string dest, float dur);
+    vuelo();//Listo
 
-    void EleccionVuelo(); 
-    float Kilometraje();
-    void DatosAvion();
-    float ComprobarDescuento();//si alplica descuento
+    void gestionarVuelos();//Listo
+    void setDatos(int num, string nombre,int Humano, float cost, string dest, float dur, float Kilome);//Listo
+    void mostrarInfo();//Listo
+    
+    void setKilometraje();
+    float getKilometraje();
 
-    void ImpresionM();
+    float ComprobarDescuento();//compruba si se alplica descuento
+    void ImpresionDeInfo();
 };
 #endif
+
