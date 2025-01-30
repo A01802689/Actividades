@@ -1,14 +1,13 @@
 #ifndef VUELO_H
 #define VUELO_H
-#include "Usuario.h"
-#include<vector>
-#include<string>
+
+#include <iostream>
+#include <string>
 
 using namespace std;
 
-class vuelo{
-
-    private: 
+class vuelo {
+private:
     int NumVuelo;
     string nombreAvion;
     int pasajeros;
@@ -16,20 +15,21 @@ class vuelo{
     string destino;
     float duracion;
     float Kilometros;
+    float kmUsuario;
+    int CuantosAsientos;
 
-    public:
+public:
+    vuelo();
 
-    vuelo();//Listo
+    void setDatos(int num, string nombre, int Humano, float cost, string dest, float dur, float Kilome);
+    void gestionarVuelos();
+    void mostrarInfo();
 
-    void gestionarVuelos();//Listo
-    void setDatos(int num, string nombre,int Humano, float cost, string dest, float dur, float Kilome);//Listo
-    void mostrarInfo();//Listo
-    
-   /* void setKilometraje();
+    void setKilometraje();
     float getKilometraje();
 
-    float ComprobarDescuento();//compruba si se alplica descuento
-    void ImpresionDeInfo();*/
+    void ComprobarDescuento();
 };
+
 #endif
 
