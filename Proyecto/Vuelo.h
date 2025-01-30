@@ -1,49 +1,32 @@
 #ifndef VUELO_H
 #define VUELO_H
 #include "Usuario.h"
-#include <vector>
+#include<vector>
+#include<string>
 
 using namespace std;
 
 class vuelo{
 
-    private:
+    private: 
 
-    vector<Usuario> Persona;
-    string fecha;
-    float hora;
+    int NumVuelo;
+    string nombreAvion;
     float precio;
-    string modelo;
     string destino;
-    int distancia;
-    int CapacidadPasajeros;
-    int gasolina;
-    string asientosPasajeros;
+    float duración;
 
     public:
 
-    Vuelo();
-    void set_FechaVuelo();
-    string get_FechaVuelo();
+    vuelo();
+    gestionarVuelos();
+    void setDatos(int num, string nombre, float cost, string dest, float dur);
 
-    void set_HoraVuelo();
-    float set_HoraVuelo();
+    void EleccionVuelo(); 
+    float Kilometraje();
+    void DatosAvion();
+    float ComprobarDescuento();//si alplica descuento
 
-    void set_PrecioVuelo();
-    float get_PrecioVuelo();
-
-    void set_ModeloAvion();
-    srting get_ModeloAvion();
-
-    void set_DestinoVuelo();
-    string get_DestinoVuelo();
-    
-    void set_DistacniaVuelo();
-    foat get_DistanciaVuelo();
-
-    void CalculaGasolina();
-    
-
+    void ImpresionM();
 };
 #endif
-

@@ -1,30 +1,46 @@
-#include <iostream>
 #include "Vuelo.h"
-using namespace std;
+#include <iostream>
 
 
-vuelo::Vuelo(){
-    
-
+Vuelo::Vuelo() {
+    NumVuelo = 0;
+    nombreAvion = "Desconocido";
+    pasajeros=0;
+    precio = 0.0;
+    destino = "No hay destino";
+    duracion = 0.0;
 }
 
 
-void vuelo::set_FechaVuelo();
-string vuelo::get_FechaVuelo();
+void Vuelo::setDatos(int num, string nombre,int Humano, float cost, string dest, float dur) {
+    NumVuelo = num;
+    nombreAvion = nombre;
+    precio = cost;
+    destino = dest;
+    duracion = dur;
+    pasajeros=Humano;
+}
 
-void vuelo::set_HoraVuelo();
-float vuelo::set_HoraVuelo();
+void Vuelo::mostrarInfo() {
+    cout << "Número de vuelo: " << NumVuelo << endl;
+    cout << "Nombre del avión: " << nombreAvion << endl;
+     cout<< "Numero de pasajeros: "<<pasajeros;
+    cout << "Precio del boleto: $" << precio << endl;
+    cout << "Destino: " << destino << endl;
+    cout << "Duración del vuelo: " << duracion << " horas" << endl;
+    cout << endl;
+}
 
-void vuelo::set_PrecioVuelo();
-float vuelo::get_PrecioVuelo();
+void gestionarVuelos() {
+    Vuelo aviones[5];
 
-void vuelo::set_ModeloAvion();
-srting vuelo::get_ModeloAvion();
+    aviones[0].setDatos(101, "Boeing 747", 80, 500.0, "Nueva York", 6.5);
+    aviones[1].setDatos(102, "Airbus A320", 100, 350.0, "Los Ángeles", 5.0);
+    aviones[2].setDatos(103, "Boeing 777", 50, 700.0, "Londres", 8.2);
+    aviones[3].setDatos(104, "Concorde", 145, 1000.0, "París", 3.5);
+    aviones[4].setDatos(105, "Embraer E190",98,  280.0, "Madrid", 4.7);
+        for (int i = 0; i < 5; i++) {
+        aviones[i].mostrarInfo();
+    }
+}
 
-void vuelo::set_DestinoVuelo();
-string vuelo::get_DestinoVuelo();
-
-void vuelo::set_DistacniaVuelo();
-foat vuelo::get_DistanciaVuelo();
-
-void vuelo::CalculaGasolina();
