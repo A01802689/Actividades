@@ -1,7 +1,8 @@
 #ifndef SALARIO_H
 #define SALARIO_H
+
 #include <string>
-using std::string;
+using namespace std;
 
 class Dinero {
 

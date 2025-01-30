@@ -1,9 +1,6 @@
 #include "Salario.h"
 #include <iostream>
-using std::cin;
-using std::cout;
-using std::endl;
-using std::string;
+using namespace std;
 
 Dinero::Dinero() {
     for (int i = 0; i < 5; i++) {
@@ -30,7 +27,7 @@ void Dinero::setDineroDiario() {
 }
 
 float Dinero::Calculo() {
-    float prom = 0;
+    float prom = 0.0;
     for (int i = 0; i < 5; i++) {
         prom += dinero[i];
     }
