@@ -9,7 +9,6 @@ using namespace std;
 class vuelo{
 
     private: 
-
     int NumVuelo;
     string nombreAvion;
     int pasajeros;

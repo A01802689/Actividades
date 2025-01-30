@@ -27,7 +27,6 @@ void vuelo::setDatos(int num, string nombre,int Humano, float cost, string dest,
 
 void vuelo::gestionarVuelos() {
     vuelo aviones[5];// de la clase vuelo cree una arreglo llamado aviones
-
     aviones[0].setDatos(1, "Boeing 747", 80, 500.0, "Nueva York", 6.5, 33000);
     aviones[1].setDatos(2, "Airbus A320", 200, 350.0, "Los Ángeles", 5.0, 25000);
     aviones[2].setDatos(3, "Boeing 777", 50, 700.0, "Londres", 8.2, 15000);
