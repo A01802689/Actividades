@@ -1,13 +1,16 @@
 #ifndef VUELO_H
 #define VUELO_H
-
+#include <vector>
 #include <iostream>
 #include <string>
+#include "Usuario.h"
 
 using namespace std;
 
 class vuelo {
+
 private:
+    vector <Usuario> Persona;
     int NumVuelo;
     string nombreAvion;
     int pasajeros;
@@ -16,7 +19,7 @@ private:
     float duracion;
     float Kilometros;
     float kmUsuario;
-    int CuantosAsientos;
+    float CuantosAsientos;
 
 public:
     vuelo();
@@ -25,10 +28,7 @@ public:
     void gestionarVuelos();
     void mostrarInfo();
 
-    void setKilometraje();
-    float getKilometraje();
-
-    void ComprobarDescuento();
+    void Impresion();
 };
 
 #endif

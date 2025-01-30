@@ -5,7 +5,7 @@ int main(){
 
     vuelo objeto1;
 
-    objeto1.gestionarVuelos();
+    objeto1.Impresion();
     
     return 0;
 }

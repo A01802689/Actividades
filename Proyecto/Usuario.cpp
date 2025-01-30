@@ -56,18 +56,10 @@ char Usuario::getOpcion() {
         if (Opcion == 's' || Opcion == 'S') {
             Registro();
         } else if (Opcion == 'n' || Opcion == 'N') {
-            cout << "No ha hecho su registro. Se ocupará después para reservar su vuelo. ¿Seguro (s/n)? ";
-            cin >> Opcion;
-
-            if (Opcion == 'n' || Opcion == 'N') {
-                Registro();
-            } else if (Opcion == 's' || Opcion == 'S') {
-                cout << "Iniciando programa sin registro..." << endl;
-            }
+            cout << "No ha hecho su registro. Se ocupará después para reservar su vuelo";
         } else {
             cout << "Elija una opción válida." << endl;
         }
-
     } while (Opcion != 'n' && Opcion != 'N' && Opcion != 's' && Opcion != 'S');
 
     return Opcion;

@@ -11,10 +11,8 @@ vuelo::vuelo() {
     destino = "No hay destino";
     duracion = 0.0;
     Kilometros= 0.0;
-    CuantosAsientos=0;
 
 }
-
 
 void vuelo::setDatos(int num, string nombre,int Humano, float cost, string dest, float dur, float Kilome) {
     
@@ -25,7 +23,7 @@ void vuelo::setDatos(int num, string nombre,int Humano, float cost, string dest,
     destino = dest;
     duracion = dur;
     Kilometros= Kilome;
-   
+    CuantosAsientos=0;   
 }
 
 void vuelo::gestionarVuelos() {
@@ -39,37 +37,61 @@ void vuelo::gestionarVuelos() {
         aviones[i].mostrarInfo();
     }
 
-  int eleccion = 0;
-    cout << "Elige el número de vuelo que quieras: " << endl;
+ int eleccion=0;
+
+do {
+    cout << "Elige el número de vuelo que quieras (1-5): " << endl;
     cin >> eleccion;
 
-    while (eleccion < 1 || eleccion > 5) {
-        cout << "Número de vuelo inválido." << endl;
-
+    if (eleccion < 1 || eleccion > 5) {
+        cout << "Número de vuelo inválido. Inténtalo de nuevo." << endl;
+        return;
     }
+
+} while (eleccion < 1 || eleccion > 5);
+
 
     cout<<"Cuantos asinetos ocupas...."<<endl;
     cin>>CuantosAsientos;
 
     if (aviones[eleccion - 1].pasajeros+CuantosAsientos > 200) {
         cout << "El avión está lleno, elige otra opción" << endl;
-        cin >> eleccion;
-    } else {
-        aviones[eleccion-1].pasajeros= aviones[eleccion-1].pasajeros + CuantosAsientos; // Incrementar el número de pasajeros o podira poenr aviones[eleccion-1].pasajero+= 1
-        cout<<"Esta es la información de tu vuelo actualizado:" << endl;
-        aviones[eleccion-1].mostrarInfo();
-    }
+        return gestionarVuelos();
+    }else{
+        aviones[eleccion-1].pasajeros+= CuantosAsientos; // Incrementar el número de pasajeros o podira poenr aviones[eleccion-1].pasajero+= 1 
+        aviones[eleccion-1].precio=aviones[eleccion-1].precio*CuantosAsientos;
+       
+        
+        Usuario ObjetoPerosona;
+        
+        ObjetoPerosona.getOpcion();
+        if(ObjetoPerosona.getOpcion()=='n'|| ObjetoPerosona.getOpcion()=='N' ){
 
+            cout<<"No te dejarmos hacer la reservacion hasta que te registres"<<endl;
+            
+        }else{
+
+                cout<<"Esta es la información de tu vuelo actualizado:" << endl;
+                cout<<"Nombre de usuario: "<<ObjetoPerosona.getNombre()<<endl;
+                cout<<"Edad: "<<ObjetoPerosona.getEdad()<<endl;
+                cout<<"Correo: "<<ObjetoPerosona.getCorreo()<<endl;
+                aviones[eleccion-1].mostrarInfo();
+
+        }
+    }
 }
 
 void vuelo::mostrarInfo() {
     cout << "Número de vuelo: " << NumVuelo << endl;
     cout << "Nombre del avión: " << nombreAvion << endl;
     cout<< "Numero de pasajeros: "<<pasajeros<<endl;
-    cout << "Precio del boleto: $" << precio << endl;
+    cout << "Precio total del vuelo: $" << precio <<endl;
     cout << "Destino: " << destino << endl;
     cout << "Duración del vuelo: " << duracion << " horas" << endl;
     cout<< "Se van a recorrer: "<<Kilometros<<" Kilometros de distancia"<<endl;
     cout << endl;
 }
 
+ void vuelo::Impresion(){
+    gestionarVuelos();
+ }
