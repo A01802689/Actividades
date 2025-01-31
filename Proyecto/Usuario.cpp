@@ -54,7 +54,7 @@ char Usuario::getOpcion() {
         cin >> Opcion;
 
         if (Opcion == 's' || Opcion == 'S') {
-            Registro();
+            cout<<"Inicando registro"<<endl;
         } else if (Opcion == 'n' || Opcion == 'N') {
             cout << "No ha hecho su registro. Se ocupará después para reservar su vuelo";
         } else {

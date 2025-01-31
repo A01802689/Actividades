@@ -27,6 +27,7 @@ void vuelo::setDatos(int num, string nombre,int Humano, float cost, string dest,
 }
 
 void vuelo::gestionarVuelos() {
+
     vuelo aviones[5];// de la clase vuelo cree una arreglo llamado aviones
     aviones[0].setDatos(1, "Boeing 747", 80, 500.0, "Nueva York", 6.5, 33000);
     aviones[1].setDatos(2, "Airbus A320", 200, 350.0, "Los Ángeles", 5.0, 25000);
@@ -45,7 +46,7 @@ do {
 
     if (eleccion < 1 || eleccion > 5) {
         cout << "Número de vuelo inválido. Inténtalo de nuevo." << endl;
-        return;
+        return gestionarVuelos();
     }
 
 } while (eleccion < 1 || eleccion > 5);
@@ -63,15 +64,16 @@ do {
        
         
         Usuario ObjetoPerosona;
-        
-        ObjetoPerosona.getOpcion();
-        if(ObjetoPerosona.getOpcion()=='n'|| ObjetoPerosona.getOpcion()=='N' ){
+
+        if(ObjetoPerosona.getOpcion()=='n'){
 
             cout<<"No te dejarmos hacer la reservacion hasta que te registres"<<endl;
             
         }else{
+             ObjetoPerosona.Registro();
 
-                cout<<"Esta es la información de tu vuelo actualizado:" << endl;
+                cout<<" ----------Información de tu vuelo actualizado:-----------" << endl;
+
                 cout<<"Nombre de usuario: "<<ObjetoPerosona.getNombre()<<endl;
                 cout<<"Edad: "<<ObjetoPerosona.getEdad()<<endl;
                 cout<<"Correo: "<<ObjetoPerosona.getCorreo()<<endl;
@@ -84,7 +86,7 @@ do {
 void vuelo::mostrarInfo() {
     cout << "Número de vuelo: " << NumVuelo << endl;
     cout << "Nombre del avión: " << nombreAvion << endl;
-    cout<< "Numero de pasajeros: "<<pasajeros<<endl;
+    cout<< "Numero de pasajeros Totales: "<<pasajeros<<endl;
     cout << "Precio total del vuelo: $" << precio <<endl;
     cout << "Destino: " << destino << endl;
     cout << "Duración del vuelo: " << duracion << " horas" << endl;
@@ -95,3 +97,5 @@ void vuelo::mostrarInfo() {
  void vuelo::Impresion(){
     gestionarVuelos();
  }
+
+ +

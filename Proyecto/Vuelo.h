@@ -1,6 +1,6 @@
 #ifndef VUELO_H
 #define VUELO_H
-#include <vector>
+
 #include <iostream>
 #include <string>
 #include "Usuario.h"
@@ -10,7 +10,7 @@ using namespace std;
 class vuelo {
 
 private:
-    vector <Usuario> Persona;
+
     int NumVuelo;
     string nombreAvion;
     int pasajeros;
