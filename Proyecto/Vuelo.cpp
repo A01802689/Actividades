@@ -97,5 +97,3 @@ void vuelo::mostrarInfo() {
  void vuelo::Impresion(){
     gestionarVuelos();
  }
-
- +
