@@ -11,6 +11,9 @@ vuelo::vuelo() {
     destino = "No hay destino";
     duracion = 0.0;
     Kilometros= 0.0;
+    recorrer=0.0;
+    TotalKm=0.0;
+    TotalPrecio=0.0;
 
 }
 
@@ -29,6 +32,7 @@ void vuelo::setDatos(int num, string nombre,int Humano, float cost, string dest,
 void vuelo::gestionarVuelos() {
 
     vuelo aviones[5];// de la clase vuelo cree una arreglo llamado aviones
+
     aviones[0].setDatos(1, "Boeing 747", 80, 500.0, "Nueva York", 6.5, 33000);
     aviones[1].setDatos(2, "Airbus A320", 200, 350.0, "Los Ángeles", 5.0, 25000);
     aviones[2].setDatos(3, "Boeing 777", 50, 700.0, "Londres", 8.2, 15000);
@@ -46,10 +50,9 @@ do {
 
     if (eleccion < 1 || eleccion > 5) {
         cout << "Número de vuelo inválido. Inténtalo de nuevo." << endl;
-        return gestionarVuelos();
     }
 
-} while (eleccion < 1 || eleccion > 5);
+    } while (eleccion < 1 || eleccion > 5);
 
 
     cout<<"Cuantos asinetos ocupas...."<<endl;
@@ -58,16 +61,37 @@ do {
     if (aviones[eleccion - 1].pasajeros+CuantosAsientos > 200) {
         cout << "El avión está lleno, elige otra opción" << endl;
         return gestionarVuelos();
+
     }else{
-        aviones[eleccion-1].pasajeros+= CuantosAsientos; // Incrementar el número de pasajeros o podira poenr aviones[eleccion-1].pasajero+= 1 
-        aviones[eleccion-1].precio=aviones[eleccion-1].precio*CuantosAsientos;
-       
+    
+       setComprobacionKm(); 
+
+            TotalKm = aviones[eleccion - 1].Kilometros + getComprobacionKm();
+            TotalPrecio = aviones[eleccion - 1].precio * CuantosAsientos; 
+
+            // Aplicar descuento si se recorren más de 40,000 km
+            if (TotalKm >= 40000) {
+                cout << "Se aplicó un descuento del 40%" << endl;
+                TotalPrecio *= 0.6; 
+            } else {
+                cout << "No es aplicable el descuento" << endl;
+            }
+
+            // Actualizar los valores en el avión seleccionado
+            aviones[eleccion - 1].Kilometros = TotalKm;
+            aviones[eleccion - 1].pasajeros += CuantosAsientos;
+            aviones[eleccion - 1].precio = TotalPrecio;
+
+    
         
+
+   
         Usuario ObjetoPerosona;
 
         if(ObjetoPerosona.getOpcion()=='n'){
 
             cout<<"No te dejarmos hacer la reservacion hasta que te registres"<<endl;
+            return;
             
         }else{
              ObjetoPerosona.Registro();
@@ -93,6 +117,18 @@ void vuelo::mostrarInfo() {
     cout<< "Se van a recorrer: "<<Kilometros<<" Kilometros de distancia"<<endl;
     cout << endl;
 }
+
+
+void vuelo::setComprobacionKm(){
+    cout<<"Cauntos kilometros has recorrido anterirormente...."<<endl;
+    cin>>recorrer;
+ }
+
+ float vuelo::getComprobacionKm(){
+    return recorrer;
+ }
+
+
 
  void vuelo::Impresion(){
     gestionarVuelos();

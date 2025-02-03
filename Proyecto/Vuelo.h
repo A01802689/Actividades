@@ -20,6 +20,9 @@ private:
     float Kilometros;
     float kmUsuario;
     float CuantosAsientos;
+    float recorrer;
+    float TotalKm;
+    float TotalPrecio;
 
 public:
     vuelo();
@@ -27,6 +30,9 @@ public:
     void setDatos(int num, string nombre, int Humano, float cost, string dest, float dur, float Kilome);
     void gestionarVuelos();
     void mostrarInfo();
+
+    void setComprobacionKm();
+    float getComprobacionKm();
 
     void Impresion();
 };
