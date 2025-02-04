@@ -14,6 +14,8 @@ vuelo::vuelo() {
     recorrer=0.0;
     TotalKm=0.0;
     TotalPrecio=0.0;
+    EleccionSN=' ';
+
 
 }
 
@@ -27,9 +29,26 @@ void vuelo::setDatos(int num, string nombre,int Humano, float cost, string dest,
     duracion = dur;
     Kilometros= Kilome;
     CuantosAsientos=0;   
+
 }
 
 void vuelo::gestionarVuelos() {
+
+Usuario ObjetoPersona;
+cout<<"Quieres hacer tu registro? (s/n)"<<endl;
+cin>>EleccionSN;
+
+if (EleccionSN=='n' || EleccionSN=='N'){
+
+    cout<<"Ocuparas el registro mas adelante......."<<endl;
+}
+
+else if(EleccionSN=='s' || EleccionSN=='S'){
+    ObjetoPersona.Registro();
+}
+else{
+    cout<<"Elige una opcion VALIDA"<<endl;
+}
 
     vuelo aviones[5];// de la clase vuelo cree una arreglo llamado aviones
 
@@ -41,8 +60,7 @@ void vuelo::gestionarVuelos() {
         for (int i = 0; i < 5; i++) {
         aviones[i].mostrarInfo();
     }
-
- int eleccion=0;
+int eleccion=0;
 
 do {
     cout << "Elige el número de vuelo que quieras (1-5): " << endl;
@@ -71,7 +89,7 @@ do {
 
             // Aplicar descuento si se recorren más de 40,000 km
             if (TotalKm >= 40000) {
-                cout << "Se aplicó un descuento del 40%" << endl;
+                cout << "SE APLICO UN DESCUENTO DEL 40%" << endl;
                 TotalPrecio *= 0.6; 
             } else {
                 cout << "No es aplicable el descuento" << endl;
@@ -82,30 +100,28 @@ do {
             aviones[eleccion - 1].pasajeros += CuantosAsientos;
             aviones[eleccion - 1].precio = TotalPrecio;
 
-    
-        
 
-   
-        Usuario ObjetoPerosona;
+        if (EleccionSN == 'n' || EleccionSN == 'N') {
+         do {
+            cout << "Es obligatorio que hagas tu registro, sino tu reserva NO será guardada." << endl;
+            cout << "¿Quieres hacer tu registro? (s/n)" << endl;
+            cin >> EleccionSN;
+        } while (EleccionSN != 'S' && EleccionSN != 's');
 
-        if(ObjetoPerosona.getOpcion()=='n'){
-
-            cout<<"No te dejarmos hacer la reservacion hasta que te registres"<<endl;
-            return;
-            
-        }else{
-             ObjetoPerosona.Registro();
-
-                cout<<" ----------Información de tu vuelo actualizado:-----------" << endl;
-
-                cout<<"Nombre de usuario: "<<ObjetoPerosona.getNombre()<<endl;
-                cout<<"Edad: "<<ObjetoPerosona.getEdad()<<endl;
-                cout<<"Correo: "<<ObjetoPerosona.getCorreo()<<endl;
-                aviones[eleccion-1].mostrarInfo();
-
+        ObjetoPersona.Registro();
         }
+
+            cout<<" ----------Información de tu vuelo actualizado:-----------" << endl;
+            cout<<endl;
+            cout<<"Usuario: "<<ObjetoPersona.getNombre()<<endl;
+            cout<<"Edad: "<<ObjetoPersona.getEdad()<<endl;
+            cout<<"Correo: "<<ObjetoPersona.getCorreo()<<endl;
+            aviones[eleccion-1].mostrarInfo();
+
+        
     }
 }
+
 
 void vuelo::mostrarInfo() {
     cout << "Número de vuelo: " << NumVuelo << endl;
@@ -127,7 +143,6 @@ void vuelo::setComprobacionKm(){
  float vuelo::getComprobacionKm(){
     return recorrer;
  }
-
 
 
  void vuelo::Impresion(){

@@ -23,6 +23,7 @@ private:
     float recorrer;
     float TotalKm;
     float TotalPrecio;
+    char EleccionSN;
 
 public:
     vuelo();
@@ -35,6 +36,7 @@ public:
     float getComprobacionKm();
 
     void Impresion();
+
 };
 
 #endif

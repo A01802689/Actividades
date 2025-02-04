@@ -23,8 +23,6 @@ public:
     void setCorreo();
     string getCorreo();
 
-    char getOpcion();
-
     void Registro();
 };
 
