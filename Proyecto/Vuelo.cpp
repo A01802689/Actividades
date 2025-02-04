@@ -87,7 +87,7 @@ do {
             TotalKm = aviones[eleccion - 1].Kilometros + getComprobacionKm();
             TotalPrecio = aviones[eleccion - 1].precio * CuantosAsientos; 
 
-            // Aplicar descuento si se recorren más de 40,000 km
+    
             if (TotalKm >= 40000) {
                 cout << "SE APLICO UN DESCUENTO DEL 40%" << endl;
                 TotalPrecio *= 0.6; 
@@ -95,7 +95,7 @@ do {
                 cout << "No es aplicable el descuento" << endl;
             }
 
-            // Actualizar los valores en el avión seleccionado
+         
             aviones[eleccion - 1].Kilometros = TotalKm;
             aviones[eleccion - 1].pasajeros += CuantosAsientos;
             aviones[eleccion - 1].precio = TotalPrecio;
@@ -117,7 +117,6 @@ do {
             cout<<"Edad: "<<ObjetoPersona.getEdad()<<endl;
             cout<<"Correo: "<<ObjetoPersona.getCorreo()<<endl;
             aviones[eleccion-1].mostrarInfo();
-
         
     }
 }
